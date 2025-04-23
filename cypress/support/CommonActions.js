@@ -30,7 +30,7 @@ class CommonActions {
     }
 
     login(email, password) {
-        cy.contains("Sign in").click();
+        cy.contains("Sign In").click();
         LoginPage.fillEmailInput(email);
         LoginPage.fillPasswordInput(password);
         this.clickOnElement(LoginPage.signInButtonIdentifier)
