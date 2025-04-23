@@ -20,6 +20,7 @@ class CommonActions {
     }
 
     register(firstName, lastName, email, password) {
+        LandinPage.clickOnCreateAccount(landindPageData.createAccountButtonText);
         RegistrationPage.fillFirstNameInput(firstName);
         RegistrationPage.fillLastNameInput(lastName);
         RegistrationPage.fillEmailInput(email);
@@ -29,7 +30,7 @@ class CommonActions {
     }
 
     login(email, password) {
-        LandinPage.clickOnCreateAccount(landindPageData.sigInButtonText);
+        cy.contains("Sign in").click();
         LoginPage.fillEmailInput(email);
         LoginPage.fillPasswordInput(password);
         this.clickOnElement(LoginPage.signInButtonIdentifier)
